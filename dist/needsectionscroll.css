@@ -4,6 +4,29 @@
   - Copyright 2015 Dzmitry Vasileuski
   - Licensed under MIT (http://opensource.org/licenses/MIT)
 ***********************************************/
+/* Verticalization
+***********************************************/
+.needsectionscroll_section {
+  position: relative;
+
+  white-space: nowrap;
+}
+.needsectionscroll_section:after {
+  content: '';
+
+  display: inline-block;
+
+  width: 0;
+  min-height: 100vh;
+
+  vertical-align: middle;
+}
+.needsectionscroll_section_content {
+  display: inline-block;
+
+  vertical-align: middle;
+  white-space: normal;
+}
 /* Pager
 ***********************************************/
 .needsectionscroll_pager {

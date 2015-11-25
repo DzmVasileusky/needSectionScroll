@@ -147,6 +147,18 @@ var needSectionScroll = (function() {
 				var section = plugin.sectionsList[i],
 				    name = section.getAttribute('data-sectionscroll');
 				plugin.sections[name] = section;
+
+				// verticalize
+				if (plugin.options.verticalize) {
+					console.log('1');
+					var sectionContent =  document.createElement('div');
+					plugin.addClass(sectionContent, 'needsectionscroll_section_content');
+					sectionContent.innerHTML = section.innerHTML;
+					section.innerHTML = '';
+					section.appendChild(sectionContent);
+
+					plugin.addClass(section, 'needsectionscroll_section');
+				}
 			}
 
 			// create dotted nav
@@ -408,6 +420,8 @@ var needSectionScroll = (function() {
 		***********************************************/
 		'config': {
 			'default' : {
+				// verticalize align to middle
+				'verticalize': true,
 				// default scrolling for screens with resolution lesser than option value 
 				'mobileOff': false,
 				// create pager
