@@ -147,17 +147,21 @@ var needSectionScroll = (function() {
 				var section = plugin.sectionsList[i],
 				    name = section.getAttribute('data-sectionscroll');
 				plugin.sections[name] = section;
-
+				
+				plugin.addClass(section, 'needsectionscroll_section');
+				
 				// verticalize
 				if (plugin.options.verticalize) {
-					console.log('1');
-					var sectionContent =  document.createElement('div');
+					var sectionContent =  document.createElement('div'),
+							sectionVerticalizer =  document.createElement('div');
 					plugin.addClass(sectionContent, 'needsectionscroll_section_content');
+					plugin.addClass(sectionVerticalizer, 'needsectionscroll_section_verticalizer');
 					sectionContent.innerHTML = section.innerHTML;
 					section.innerHTML = '';
 					section.appendChild(sectionContent);
+					section.appendChild(sectionVerticalizer);
 
-					plugin.addClass(section, 'needsectionscroll_section');
+					plugin.addClass(section, 'needsectionscroll_section-verticalize');
 				}
 			}
 
@@ -230,6 +234,13 @@ var needSectionScroll = (function() {
 
 				for (var name in plugin.sections) {
 					plugin.sections[name].style.minHeight = windowHeight + 'px';
+				}
+
+				if (plugin.options.verticalize) {
+					plugin.verticalizers = document.querySelectorAll('.needsectionscroll_section_verticalizer');
+					for (var i = 0; i < plugin.verticalizers.length; i++) {
+						plugin.verticalizers[i].style.minHeight = windowHeight + 'px';
+					}
 				}
 			}
 
