@@ -1,0 +1,61 @@
+/*********************************************** 
+  needsectionscroll 
+  - Version 1.0.0
+  - Copyright 2015 Dzmitry Vasileuski
+  - Licensed under MIT (http://opensource.org/licenses/MIT)
+***********************************************/
+
+/* Pager
+***********************************************/
+.needsectionscroll_pager {
+  position: fixed;
+
+  span {
+    display: block;
+    height: 10px;
+    width: 10px;
+    background: #000;
+    border-radius: 10px;
+    opacity: .5;
+    margin: 10px 0;
+    cursor: pointer;
+
+    &.current {
+      opacity: 1;
+    }
+  }
+}
+
+.needsectionscroll_pager-right {
+  right: 30px;
+  top: 50%;
+  margin-top: -50px;
+}
+
+.needsectionscroll_pager-top {
+  top: 30px;
+  left: 50%;
+  margin-left: -50px;
+
+  span {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
+
+.needsectionscroll_pager-bottom {
+  bottom: 30px;
+  left: 50%;
+  margin-left: -50px;
+
+  span {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
+
+.needsectionscroll_pager-left {
+  left: 30px;
+  top: 50%;
+  margin-top: -50px;
+}

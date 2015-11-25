@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>needsectionscroll demo</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../dist/needsectionscroll.min.css">
+
+	  <!-- Styles just for demo -->
+		<style>
+			body {
+				font: 14px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;
+				margin:0;
+				padding:0;
+				background: #FFE;
+			}
+
+			a[data-sectionscroll-link] {
+				display: inline-block;
+				margin: 0 10px 10px 0;
+				padding: 10px 15px;
+				font-weight: bold;
+				letter-spacing: 1px;
+				text-decoration: none;
+				color: #fff;
+				background: #7B5207;
+			  border-radius: 3px;
+			  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+			}
+
+			h1 {
+				margin: 0;
+			}
+
+			section {
+				color: #fff;
+			}
+
+			.demo_section-1 {
+				background: #00a8da;
+			}
+
+			.demo_section-2 {
+				background: #bada55;
+			}
+
+			.demo_section-3 {
+				background: #0093bf;
+			}
+
+			.demo_section-4 {
+				background: #F85A20;
+			}
+
+			.demo_section-5 {
+				background: #F5BC00;
+			}
+
+		</style>
+
+	</head>
+	<body>
+		<div class="demo_wrapper">
+			<nav class="demo_nav">
+				<a href="#" data-sectionscroll-link="1">Section 1</a>
+				<a href="#" data-sectionscroll-link="2">Section 2</a>
+				<a href="#" data-sectionscroll-link="3">Section 3</a>
+				<a href="#" data-sectionscroll-link="4">Section 4</a>
+				<a href="#" data-sectionscroll-link="5">Section 5</a>
+			</nav>
+			<section class="demo_section-1" data-sectionscroll="1">
+				<h1>Steps to use the script</h1>
+			</section>
+			<section class="demo_section-2" data-sectionscroll="2">
+				<h1>Steps to use the script</h1>
+			</section>
+			<section class="demo_section-3" data-sectionscroll="3">
+				<h1>Steps to use the script</h1>
+			</section>
+			<section class="demo_section-4" data-sectionscroll="4">
+				<h1>Steps to use the script</h1>
+			</section>
+			<section class="demo_section-5" data-sectionscroll="5">
+				<h1>Steps to use the script</h1>
+			</section>
+		</div>
+
+		<script src="../dist/needsectionscroll.js"></script>
+		<script>  
+			needSectionScroll.init();
+		</script>
+	</body>
+</html>
