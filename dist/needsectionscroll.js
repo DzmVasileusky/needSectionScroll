@@ -350,6 +350,8 @@ var needSectionScroll = (function() {
 			// set current section and current link
 			needSectionScroll.setCurrentSection();
 
+			// on initializing callback
+			plugin.options.onInit.call(plugin);
 		},
 
 		/* Move to next section
@@ -469,6 +471,8 @@ var needSectionScroll = (function() {
 				'currentSectionClass': 'current',
 				// classname for current nav link
 				'currentNavLinkClass': 'current',
+				// on plugin initializing
+				onInit: function() {},
 				// on start of moving to section callback
 				onMoveStart: function() {},
 				// on finish of moving to section callback
