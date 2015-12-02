@@ -43,10 +43,32 @@ var needSectionScroll = (function() {
           animateScroll(elapsedTime);
         }, increment);
       } else {
-      	callback();
+        // update position after Safari bottom bar disappeared
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        	iosAnimateAfterScroll(0, callback, 50, plugin.currentSection.offsetTop - to);
+        } else {
+      		callback();
+      	}
       }
     };
 
+    // ios after scroll additional animation becouse of bottom bar disapperance
+    var iosAnimateAfterScroll = function(elapsedTime, callback, iosDuration, iosScrollChange) {
+    	elapsedTime += 5;
+    	var position = to + iosScrollChange * ( elapsedTime / iosDuration );
+
+      plugin.window.scrollTo(0, position);
+
+			if (elapsedTime < iosDuration) {
+        setTimeout(function() {
+          iosAnimateAfterScroll(elapsedTime, callback, iosDuration, iosScrollChange);
+        }, increment);
+      } else {
+      	callback();
+      }
+    }
+
+    // animate scroll
     animateScroll(0);
 	}
 
