@@ -294,7 +294,7 @@ var needSectionScroll = (function() {
 
 				link.addEventListener('click',function() {
 					if (!plugin.moving) {
-						sectionName = this.getAttribute('data-sectionscroll-link');
+						var sectionName = this.getAttribute('data-sectionscroll-link');
 						needSectionScroll.move(plugin.sections[sectionName]);
 					}
 	      });
